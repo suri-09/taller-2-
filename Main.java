@@ -23,5 +23,28 @@ public class Main {
         float s;
         byte t;
         double u;
+
+        a =1;
+        b = 2f;
+        c = 3;
+        d = 4.01;
+        e = 5;
+        f = 6f;
+        g = 7;
+        h = 8.01;
+        j = 9;
+        k = 10f;
+        l = 11;
+        m = 12.01;
+        n = 13;
+        o = 14f;
+        p = 15;
+        q = 16.01;
+        r = 17;
+        s = 18f;
+        t = 19;
+        u = 20.01;
+
+
     }
 }
