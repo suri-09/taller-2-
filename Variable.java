@@ -1,6 +1,4 @@
-package com.example;
-
-public class Main {
+public class Variable {
     public static void main(String[] args) {
   
         //Declaracion de variables
@@ -66,6 +64,8 @@ public class Main {
         t = 80;
         u = 90.6;
 
+        int suma = a + e + n + j + l + p + t;
+        System.out.println("La suma de las variables enteras es: " + suma);
 
     }
 }
