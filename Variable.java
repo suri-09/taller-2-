@@ -27,14 +27,14 @@ public class Variable {
         double double5;
 
         //Asignacion de valores a las variables
-        int1 = 1;//
-        float1 = 2f;//
-        byte1 = 30;//
-        double1 = 4.01;//
-        int2 = 5;//
-        float2 = 6f;//
-        byte2 = 78;//
-        double2 = 8.01;//
+        int1 = 1;
+        float1 = 2f;
+        byte1 = 30;
+        double1 = 4.01;
+        int2 = 5;
+        float2 = 6f;
+        byte2 = 78;
+        double2 = 8.01;
         int3 = 9;
         float3 = 10f;
         byte3 = 120;
@@ -74,11 +74,16 @@ public class Variable {
 
         //Programa 
         int opcion;
+        int pregunta;
         Double x; 
         Double y;
         Double z; 
+        boolean entradaValida = false;
 
-
+    do{
+        entradaValida = true;
+        try{
+    
         JOptionPane.showMessageDialog(null, "Bienvenido a nuestra calculadora de ecuaciones");
         
         do {
@@ -89,21 +94,60 @@ public class Variable {
                     z  = Double.parseDouble(JOptionPane.showInputDialog(null, "Digite el valor de z"));
                     y = (3*x)/((1+(3*x)/(3*(z*z)+2))/(1/((1/(1+z))+(3*(x*x))+(2*z)+3)));
                     JOptionPane.showMessageDialog(null, "Este es el valor de y: " + y);
+                    do {
+                        pregunta = Integer.parseInt(JOptionPane.showInputDialog(null, "¿Desea volver hacer una ecuación? \n 1) SI \n 2) NO"));
+                        switch (pregunta) {
+                            case 1:
+                                do{
+                                    opcion = Integer.parseInt(JOptionPane.showInputDialog(null, "1) Solución de ecuación 1 \n 2) Solución de ecuación 2"));
+                                    switch (opcion) {
+                                    case 1:
+                                        x = Double.parseDouble(JOptionPane.showInputDialog(null, "Digite el valor de x"));
+                                        z  = Double.parseDouble(JOptionPane.showInputDialog(null, "Digite el valor de z"));
+                                        y = (3*x)/((1+(3*x)/(3*(z*z)+2))/(1/((1/(1+z))+(3*(x*x))+(2*z)+3)));
+                                        JOptionPane.showMessageDialog(null, "Este es el valor de y: " + y);
+                                        break;
+                                    
+                                    case 2:
+                                        //Ecuacion 2
+                                        break;
+
+                                    default:
+                                        JOptionPane.showMessageDialog(null, "Opción no válida, digíte una opción válida");
+                                        break;
+                                
+                                    }
+                                }
+                                while (opcion != 1 && opcion != 2);
+                                break;
+                            case 2:
+                                JOptionPane.showMessageDialog(null, "Gracias por usar nuestra calculadora de ecuaciones");
+                                break;
+                        }
+                    }
+                        while (pregunta == 1);
+
+
                     break;
             
                     case 2:
-                    //Ecuacion 2
-                    break;
+                        //Ecuacion 2
+                        break;
 
                     case 3:
-                    JOptionPane.showMessageDialog(null, "Gracias por usar nuestra calculadora de ecuaciones");
+                        JOptionPane.showMessageDialog(null, "Gracias por usar nuestra calculadora de ecuaciones");
+                        break;
 
-                 default:
-                    JOptionPane.showMessageDialog(null, "Opción no válida, digíte una opción válida");
-
-                    break;
+                    default:
+                        JOptionPane.showMessageDialog(null, "Opción no válida, digíte una opción válida");
+                        break;
                 }
         }
         while (opcion != 1 && opcion != 2 && opcion != 3);
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Hubo un error por no llenar la pregunta");
+            entradaValida = false;
+        }
+    } while (!entradaValida);
     }
 }
