@@ -1,4 +1,4 @@
-import javax.swing.JOptionPane;
+import javax.swing.JOptionPane;//
 
 
 public class Variable {
@@ -68,7 +68,16 @@ public class Variable {
         double5 = 90.6;
 
         // Creación de variable char
-        // poner aqui
+        char char1 = 'A';
+        char char2 = 'B';
+        char char3 = 'C';
+        char char4 = 'D';
+        char char5 = '1';
+        char char6 = '2';
+        char char7 = '3';
+        char char8 = '4';
+
+        System.out.println(" "+ char1 + " " + char2 + " " + char3 + " " + char4 +" " + char5 + " " + char6 + " " + char7 + " " + char8);
 
         // Programa
         int opcion = 0;
