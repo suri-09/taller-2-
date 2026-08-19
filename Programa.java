@@ -20,7 +20,8 @@ public class Programa {
             System.out.println("_______________________________");
             System.out.println("\n---- BIENVENIDO AL PROGRAMA ----" );
             System.out.println(" Por favor ingrese una opción: ");
-            System.out.println("_______________________________");
+            System.out.println("_______________________________"
+            );
             System.out.println("\n[1] Ejercicio 1");
             System.out.println("[2] Ejercicio 2");
             System.out.println("[3] Salir");
@@ -35,7 +36,8 @@ public class Programa {
                 System.out.print("Elige que número quieres que tenga la variable [z]: ");
                 z = inicio.nextDouble();
 
-                y = ((3*x/(1 + (3*x/(((3*(z*z)) + 2)/(1/((1/(1 + z))+(3*(x*x))+(2*z)+3)))))));
+            
+                y = (3*x)/(1 + ((3*x)/((3*z*z + 2)/(1/((1.0/(1+z)) + 3*x*x + 2*z + 3)))));
 
                 System.out.println("El resultado de la operación es igual a :" + y);
             }
@@ -50,15 +52,20 @@ public class Programa {
                 //Se usa While para que el usuario ingrese un 
                 //número distinto a 0 en [z] 
                 //Se va a repetir siempre y cuando [z] sea distinto a 0
-                while (z == 0){
+                while (z == 0 || (1 + 2*z) == 0 || (1 + 3*x) == 0 || (1 + 5.0/z) == 0){
 
-                System.out.println("El valor de [z] debe ser distinto de 0 ");
-                System.out.print("Intenta de nuevo. Ingrese el valor para [z]: ");
-                z = inicio.nextDouble();   
+                    System.out.println("Los valores ingresados no son válidos.");
+                    System.out.println("Se produciría una división por cero.");
+
+                    System.out.print("Ingrese nuevamente el valor de x: ");
+                    x = inicio.nextDouble();
+
+                    System.out.print("Ingrese nuevamente el valor de z: ");
+                    z = inicio.nextDouble();   
                 
                 }
                  
-                y = ((((x*x) + (3*z) + 2)/(2+(1/(1+(2*z)))))+(2/((1+(3*(x*x*x)+(3*z)+2))/1/(1/((1+(3*x))+((3*x)+1/((2*z)+3/(1 + (5/z)))))))));
+                y = ((x*x + 3*z + 2)/(2 + (1.0/(1 + 2*z)))) + (2/((1 + 3*x*x*x + 3*z + 2)/((1.0/(1 + 3*x)) + ((3*x + 1)/(2*z + (3.0/(1 + (5.0/z))))))));
                 System.out.println("El resultado es : "+ y);                
             }
 
