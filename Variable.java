@@ -74,6 +74,7 @@ public class Variable {
         char char7 = '3';
         char char8 = '4';
 
+        // Salida de las variables char 
         System.out.println(" "+ char1 + " " + char2 + " " + char3 + " " + char4 +" " + char5 + " " + char6 + " " + char7 + " " + char8);
 
         

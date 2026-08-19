@@ -25,6 +25,15 @@ El `do-while` es un ciclo en java con una estructura de control similar al ciclo
 ## ¿Qué es el try-catch?
 Es una estructura de control que permite manejar excepciones en tiempo de ejecución, evitando que el programa termine abruptamente cuando ocurre un error. Las detecta y permite mostrar porque salió el error.
 
+## Validación de datos
+
+El programa utiliza métodos auxiliares para solicitar los datos ingresados por el usuario y validar que tengan el tipo de dato esperado.
+
+El método `pedirNumero()` recibe la entrada como texto mediante `nextLine()` y posteriormente intenta convertirla a un número `double` utilizando `Double.parseDouble()`. Si el usuario ingresa un valor que no puede convertirse a número, se utiliza `try-catch` para controlar la excepción y solicitar nuevamente el dato.
+
+El método `pedirOpcion()` funciona de manera similar, pero convierte la entrada a un número entero mediante `Integer.parseInt()`, ya que las opciones del menú corresponden a valores enteros.
+
+Estos métodos utilizan un ciclo `while(true)` para repetir la solicitud hasta que el usuario proporcione un dato válido.
 
 ## Fuentes
 [¿Qué es el do-while?](https://javautodidacta.es/bucles-do-while-y-while-en-java/)
