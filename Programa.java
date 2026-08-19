@@ -3,6 +3,36 @@
 import java.util.Scanner; // Se importó el Scanner 
 
 public class Programa {
+    public static double pedirNumero(Scanner inicio) {
+
+        while (true) {
+            String entrada = inicio.nextLine();
+            entrada = entrada.replace(',', '.');
+
+            try {
+                return Double.parseDouble(entrada);
+
+            } catch (NumberFormatException e) {
+
+                System.out.println("Entrada no válida. Debes ingresar un número.");
+                System.out.print("Intenta nuevamente: ");
+            }
+        }
+    }
+
+    public static int pedirOpcion(Scanner inicio) {
+
+        while (true) {
+            String entrada = inicio.nextLine();
+            try {
+                return Integer.parseInt(entrada);
+            } catch (NumberFormatException e) {
+
+                System.out.println("Entrada no válida. Debes ingresar una opción numérica.");
+                System.out.print("Intenta nuevamente: ");
+            }
+        }
+    }
     public static void main(String[] args) {
 
         Scanner inicio = new Scanner(System.in);
@@ -26,15 +56,15 @@ public class Programa {
             System.out.println("[2] Ejercicio 2");
             System.out.println("[3] Salir");
 
-            opcion = inicio.nextInt();
+            opcion = pedirOpcion(inicio);
 
             if (opcion == 1) {
                 //Primer caso, no hay problema si alguna de las dos 
                 //variables es cero 
                 System.out.print("Elige que número quieres que tenga la variable [x]: ");
-                x = inicio.nextDouble();
+                x = pedirNumero(inicio);
                 System.out.print("Elige que número quieres que tenga la variable [z]: ");
-                z = inicio.nextDouble();
+                z = pedirNumero(inicio);
 
             
                 y = (3*x)/(1 + ((3*x)/((3*z*z + 2)/(1/((1.0/(1+z)) + 3*x*x + 2*z + 3)))));
@@ -45,9 +75,9 @@ public class Programa {
             else if (opcion == 2) {
                 //Segundo caso, [z] no puede ser igual a cero
                 System.out.print("Elige que número quieres que tenga la variable [x]: ");
-                x = inicio.nextDouble();
+                x = pedirNumero(inicio);
                 System.out.print("Elige que número quieres que tenga la variable [z]: ");
-                z = inicio.nextDouble();
+                z = pedirNumero(inicio);
 
                 //Se usa While para que el usuario ingrese un 
                 //número distinto a 0 en [z] 
@@ -58,10 +88,10 @@ public class Programa {
                     System.out.println("Se produciría una división por cero.");
 
                     System.out.print("Ingrese nuevamente el valor de x: ");
-                    x = inicio.nextDouble();
+                    x = pedirNumero(inicio);
 
                     System.out.print("Ingrese nuevamente el valor de z: ");
-                    z = inicio.nextDouble();   
+                    z = pedirNumero(inicio);   
                 
                 }
                  
@@ -81,9 +111,8 @@ public class Programa {
             }
               
         }
-        
-
-
+        inicio.close();
     }
+    
 
 }
